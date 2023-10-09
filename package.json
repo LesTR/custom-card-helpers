@@ -1,5 +1,5 @@
 {
-  "name": "custom-card-helpers",
+  "name": "@dermotduffy/custom-card-helpers",
   "version": "1.9.0",
   "description": "Set of helpful functions and types for Custom Card creators",
   "main": "dist/index.js",
