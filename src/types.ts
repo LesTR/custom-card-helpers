@@ -31,6 +31,18 @@ export interface CallServiceActionConfig extends BaseActionConfig {
   haptic?: HapticType;
 }
 
+export interface PerformActionActionConfig extends BaseActionConfig {
+  action: "perform-action";
+  perform_action: string;
+  data?: {
+    entity_id?: string | [string];
+    [key: string]: unknown;
+  };
+  target?: HassServiceTarget;
+  repeat?: number;
+  haptic?: HapticType;
+}
+
 export interface NavigateActionConfig extends BaseActionConfig {
   action: "navigate";
   navigation_path: string;
@@ -75,6 +87,7 @@ export interface RestrictionConfig {
 export type ActionConfig =
   | ToggleActionConfig
   | CallServiceActionConfig
+  | PerformActionActionConfig
   | NavigateActionConfig
   | UrlActionConfig
   | MoreInfoActionConfig

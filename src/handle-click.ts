@@ -79,6 +79,19 @@ export const handleClick = (
         if (actionConfig.haptic) forwardHaptic(actionConfig.haptic);
       }
       break;
+    case "perform-action": {
+        if (!actionConfig.perform_action) {
+          return;
+        }
+        const [domain, service] = actionConfig.perform_action.split(".", 2);
+        const serviceData = { ...actionConfig.data };
+        if (serviceData.entity_id === "entity") {
+          serviceData.entity_id = config.entity;
+        }
+        hass.callService(domain, service, serviceData, actionConfig.target);
+        if (actionConfig.haptic) forwardHaptic(actionConfig.haptic);
+        break;
+      }
     case "call-service": {
       if (!actionConfig.service) {
         return;
