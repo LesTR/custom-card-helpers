@@ -65,6 +65,16 @@ export const handleActionConfig = (
         forwardHaptic("success");
       }
       break;
+    case "perform-action": {
+        if (!actionConfig.perform_action) {
+          forwardHaptic("failure");
+          return;
+        }
+        const [domain, service] = actionConfig.perform_action.split(".", 2);
+        hass.callService(domain, service, actionConfig.data, actionConfig.target);
+        forwardHaptic("success");
+        break;
+      }
     case "call-service": {
       if (!actionConfig.service) {
         forwardHaptic("failure");

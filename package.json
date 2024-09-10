@@ -1,6 +1,6 @@
 {
   "name": "@dermotduffy/custom-card-helpers",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Set of helpful functions and types for Custom Card creators",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/custom-cards/custom-card-helpers#readme",
   "dependencies": {
     "@formatjs/intl-utils": "^3.8.4",
-    "home-assistant-js-websocket": "^6.0.1",
+    "home-assistant-js-websocket": "^9.4.0",
     "intl-messageformat": "^9.11.1",
     "lit": "^2.1.1",
     "rollup": "^2.63.0",
